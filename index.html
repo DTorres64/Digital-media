@@ -60,7 +60,6 @@
       margin-top: 20px;
     }
 
-    /* Effet de clic sur l'image du burger */
     #burger {
       transition: transform 0.2s;
     }
@@ -69,12 +68,11 @@
       transform: scale(1.1);
     }
 
-    /* Style pour le texte en gros */
     #citation-en-gros {
       font-size: 48px;
       margin-top: 20px;
-      opacity: 0; /* Le texte est initialement invisible */
-      transition: opacity 0.5s; /* Transition pour l'opacité */
+      opacity: 0; 
+      transition: opacity 0.5s;
     }
   </style>
 </head>
@@ -94,7 +92,6 @@
     </div>
   </div>
 
-  <!-- Citation en gros à faire apparaître -->
   <div id="citation-en-gros"></div>
 
   <script>
@@ -147,18 +144,16 @@
       updateScoreValue();
       clickCounter++;
 
-      // Vérifier si le compteur de clics est un multiple de 30 pour afficher une citation aléatoire
       if (clickCounter % 30 === 0) {
         printRandomQuote();
-        citationEnGros.style.opacity = '1'; // Rendre la citation visible
+        citationEnGros.style.opacity = '1'; 
         setTimeout(() => {
-          citationEnGros.style.opacity = '0'; // Faire disparaître la citation après 5 secondes
+          citationEnGros.style.opacity = '0';
         }, 15000);
       }
     });
 
     function printRandomQuote() {
-      // Utilisez une API de citations aléatoires pour récupérer une citation aléatoire
       fetch('https://api.quotable.io/random')
         .then(response => response.json())
         .then(data => {
